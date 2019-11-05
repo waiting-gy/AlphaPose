@@ -270,7 +270,8 @@ class VideoLoader:
 
 
 class DetectionLoader:
-    def __init__(self, dataloder, batchSize=1, queueSize=1024):
+    #def __init__(self, dataloder, batchSize=1, queueSize=1024):
+    def __init__(self, dataloder, batchSize=1, queueSize=50):
         # initialize the file video stream along with the boolean
         # used to indicate if the thread should be stopped or not
         self.det_model = Darknet("yolo/cfg/yolov3-spp.cfg")
@@ -370,7 +371,8 @@ class DetectionLoader:
 
 
 class DetectionProcessor:
-    def __init__(self, detectionLoader, queueSize=1024):
+    #def __init__(self, detectionLoader, queueSize=1024):
+    def __init__(self, detectionLoader, queueSize=50):
         # initialize the file video stream along with the boolean
         # used to indicate if the thread should be stopped or not
         self.detectionLoader = detectionLoader
