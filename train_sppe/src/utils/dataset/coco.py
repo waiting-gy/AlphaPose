@@ -16,7 +16,7 @@ class Mscoco(data.Dataset):
     def __init__(self, train=True, sigma=1,
                  scale_factor=(0.2, 0.3), rot_factor=40, label_type='Gaussian'):
         #self.img_folder = '../data/coco/images'    # root image folders
-        self.img_folder = '../data/coco/images/val2017'    # root image folders
+        self.img_folder = '/kaggle/input/coco2017/val2017/val2017'    # root image folders
         self.is_train = train           # training set or test set
         self.inputResH = opt.inputResH
         self.inputResW = opt.inputResW
