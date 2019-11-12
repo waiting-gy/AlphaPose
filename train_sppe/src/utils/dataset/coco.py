@@ -16,7 +16,7 @@ class Mscoco(data.Dataset):
     def __init__(self, train=True, sigma=1,
                  scale_factor=(0.2, 0.3), rot_factor=40, label_type='Gaussian'):
         #self.img_folder = '../data/coco/images'    # root image folders
-        self.img_folder = '/kaggle/input/coco2017/val2017/val2017'    # root image folders
+        self.img_folder = '/kaggle/working/train_sppe/data/coco/'    # root image folders
         self.is_train = train           # training set or test set
         self.inputResH = opt.inputResH
         self.inputResW = opt.inputResW
@@ -38,7 +38,7 @@ class Mscoco(data.Dataset):
 
         # create train/val split
         #with h5py.File('../data/coco/annot_coco.h5', 'r') as annot:
-        with h5py.File('../data/coco/person_keypionts_val2017.h5', 'r') as annot:
+        with h5py.File('/kaggle/working/train_sppe/data/coco/person_keypionts_val2017.h5', 'r') as annot:
             # train
             self.imgname_coco_train = annot['imgname'][:-5887]
             self.bndbox_coco_train = annot['bndbox'][:-5887]
