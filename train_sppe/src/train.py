@@ -186,7 +186,8 @@ def main():
         opt.acc = acc
         opt.loss = loss
         m_dev = m.module
-        if i % opt.snapshot == 0:
+        #if i % opt.snapshot == 0:
+        if i % 25 == 0:
             torch.save(
                 #m_dev.state_dict(), '../exp/{}/{}/model_{}.pkl'.format(opt.dataset, opt.expID, opt.epoch))
                 m_dev.state_dict(), '/kaggle/working/train_sppe/exp/{}/{}/model_{}.pkl'.format(opt.dataset, opt.expID, opt.epoch))
