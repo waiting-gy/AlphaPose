@@ -113,12 +113,16 @@ def main():
     if opt.loadModel:
         print('Loading Model from {}'.format(opt.loadModel))
         m.load_state_dict(torch.load(opt.loadModel))
-        if not os.path.exists("../exp/{}/{}".format(opt.dataset, opt.expID)):
+        #if not os.path.exists("../exp/{}/{}".format(opt.dataset, opt.expID)):
+        if not os.path.exists("/kaggle/working/train_sppe/exp/{}/{}".format(opt.dataset, opt.expID)):
             try:
-                os.mkdir("../exp/{}/{}".format(opt.dataset, opt.expID))
+                #os.mkdir("../exp/{}/{}".format(opt.dataset, opt.expID))
+                os.mkdir("/kaggle/working/train_sppe/exp/{}/{}".format(opt.dataset, opt.expID))
             except FileNotFoundError:
-                os.mkdir("../exp/{}".format(opt.dataset))
-                os.mkdir("../exp/{}/{}".format(opt.dataset, opt.expID))
+                #os.mkdir("../exp/{}".format(opt.dataset))
+                os.mkdir("/kaggle/working/train_sppe/exp/{}".format(opt.dataset))
+                #os.mkdir("../exp/{}/{}".format(opt.dataset, opt.expID))
+                os.mkdir("/kaggle/working/train_sppe/exp/{}/{}".format(opt.dataset, opt.expID))
     else:
         print('Create new model')
         #if not os.path.exists("../exp/{}/{}".format(opt.dataset, opt.expID)):
