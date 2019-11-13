@@ -184,11 +184,14 @@ def main():
         m_dev = m.module
         if i % opt.snapshot == 0:
             torch.save(
-                m_dev.state_dict(), '../exp/{}/{}/model_{}.pkl'.format(opt.dataset, opt.expID, opt.epoch))
+                #m_dev.state_dict(), '../exp/{}/{}/model_{}.pkl'.format(opt.dataset, opt.expID, opt.epoch))
+                m_dev.state_dict(), '/kaggle/working/train_sppe/exp/{}/{}/model_{}.pkl'.format(opt.dataset, opt.expID, opt.epoch))
             torch.save(
-                opt, '../exp/{}/{}/option.pkl'.format(opt.dataset, opt.expID, opt.epoch))
+                #opt, '../exp/{}/{}/option.pkl'.format(opt.dataset, opt.expID, opt.epoch))
+                opt, '/kaggle/working/train_sppe/exp/{}/{}/option.pkl'.format(opt.dataset, opt.expID, opt.epoch))
             torch.save(
-                optimizer, '../exp/{}/{}/optimizer.pkl'.format(opt.dataset, opt.expID))
+                #optimizer, '../exp/{}/{}/optimizer.pkl'.format(opt.dataset, opt.expID))
+                optimizer, '/kaggle/working/train_sppe/exp/{}/{}/optimizer.pkl'.format(opt.dataset, opt.expID))
 
         loss, acc = valid(val_loader, m, criterion, optimizer, writer)
 
