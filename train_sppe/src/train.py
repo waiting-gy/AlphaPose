@@ -157,11 +157,11 @@ def main():
 
     train_loader = torch.utils.data.DataLoader(
         #train_dataset, batch_size=opt.trainBatch, shuffle=True, num_workers=opt.nThreads, pin_memory=True)
-        train_dataset, batch_size=64, shuffle=True, num_workers=2, pin_memory=True)
+        train_dataset, batch_size=32, shuffle=True, num_workers=2, pin_memory=True)
 
     val_loader = torch.utils.data.DataLoader(
         #val_dataset, batch_size=opt.validBatch, shuffle=False, num_workers=opt.nThreads, pin_memory=True)
-        val_dataset, batch_size=64, shuffle=False, num_workers=2, pin_memory=True)
+        val_dataset, batch_size=32, shuffle=False, num_workers=2, pin_memory=True)
 
     # Model Transfer
     m = torch.nn.DataParallel(m).cuda()
